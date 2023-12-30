@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #B0D4F4;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+}
+#imageBlock{
+	/* background-color: red; */
+	width: 42%;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#imageBlock img{
+    height: 80%;
+}
+#textBlock{
+/*	background-color: green;*/
+	width: 42%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#del{
+	width: 73%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: 500;
+	border-radius: 25px;
+/*	border: 2px solid darkgreen;*/
+	color: red;
+	margin-bottom: 15px;
+}
+#textBlock form{
+	text-align: center;
+}
+#textBlock form table{
+	text-align: center;
+	height: 400px;
+	width:470px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"]{
+	font-size: 16px;
+	padding-left: 10px;
+	height: 40px;
+	width: 270px;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 5px;
+}
+input[type="submit"],
+input[type="reset"]{
+	margin-left: 10px;
+	margin-right: 10px;
+	height: 40px;
+	width: 120px;
+	outline: none;
+	border: none;
+/*	border: 1px solid black;*/
+	border-radius: 20px;
+	font-size: 16px;
+	color: white;
+    cursor: pointer;
+}
+input[type="submit"]{
+	background-color: green;
+}
+input[type="submit"]:hover{
+	background-color: darkgreen;
+}
+input[type="reset"]{
+	background-color: blue;
+}
+input[type="reset"]:hover{
+	background-color: darkblue;
+}
+#passwordErrorMessage{
+	color: red;
+	padding-right: 20px;
+	text-align: right;
+}
+h2{
+	font-size: 15px;
+	font-weight: 600;
+}
+a{
+	text-decoration: none;
+	color: darkblue;
+	transition: 0.2s;
+}
+a:hover{
+	color: red;
+}
+
+
+#submitButton.disabled{
+    background-color: rgb(116, 241, 116);
+    cursor: not-allowed;
+}

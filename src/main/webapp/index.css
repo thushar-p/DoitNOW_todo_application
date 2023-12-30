@@ -1,0 +1,670 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+	--icon_color: #1E8BAD;
+	--icon_color_hover: #34C8EA;
+	--button_color: #63BAEA;
+	--button_color_hover: #214ADB;
+	--button_border: #0F0F0F;
+	--black_font: #0F0F0F;
+	--white_font: #F4F4F4;
+	--pop_up_bg: rgb(44, 157, 183);
+	--pop_up_content_bg: #B0D4F4;
+	--pop_up_button: lightcoral;
+	--pop_up_button_hover: red;
+}
+
+body{
+    background-color: #e6eff7;
+    height: auto;
+    min-height: 87vh;
+    width: 100vw;
+    max-width: 100%;
+    font-family: 'Poppins';
+    position: relative;
+}
+
+span{
+	display: none;
+}
+
+
+
+/*header section starts here*/
+header{
+    background-color: rgb(187,220,232);
+    height: 80px;
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: fixed;
+    margin-left: 20%;
+}
+#userDetails{
+	text-align: right;
+    width: 400px;
+    margin-right: 15px;
+}
+h1{
+    font-size: 16px;
+    font-weight: 500;
+}
+header a i{
+	margin-right: 25px;
+	font-size: 40px;
+	color: var(--icon_color);
+	transition: 0.3s ease;
+}
+header a i:hover{
+	transform: rotate(360deg);
+	color: var(--icon_color_hover);
+}
+/*header section ends here*/
+
+
+
+/* side bar section starts here */
+#sideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    height: 100vh;
+/*    background-color: rgb(44, 157, 183, 0.39);*/
+    background-color: rgb(44, 157, 183, 0.23);
+    position: fixed;
+    border-right: 1px solid rgb(44, 157, 183);
+}
+#companyLogo{
+	margin-top: 10px;
+	margin-left: -165px;
+	height: 70px;
+}
+#sideBar #first{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -320px;
+}
+.taskSideButton,
+.completedSideButton{
+    height: 40px;
+    width: 180px;
+    border: 1px solid var(--button_border);
+    outline: none;
+    border-radius: 5px;
+    margin: 15px 0px 5px 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--button_color);
+    color: var(--black_font);
+    transition: 0.4s;
+}
+#logout{
+	height: 40px;
+    width: 180px;
+    border: 1px solid var(--button_border);
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--button_color);
+    color: var(--black_font);
+    transition: 0.4s;
+	margin: 5px 0px 20px 0px;
+}
+#logout:hover{
+	background-color: red;
+    color: var(--white_font);
+    font-weight: 600;
+}
+#sideBar #first button:hover{
+    background-color: var(--button_color_hover);
+    color: var(--white_font);
+    font-weight: 600;
+}
+/* side bar section ends here */
+
+
+
+
+/* main content starts here */
+main{
+	height: inherit;
+	width: 80%;
+	margin-left: 20%;
+}
+#tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    min-height: 100vh;
+    background-color: rgb(44, 157, 183, 0.23);
+/*    margin-bottom: 100px;*/
+}
+#testCase{
+	height: 150px;
+}
+
+
+
+
+#firstRowButton{
+	height: 50px;
+	width: 900px;
+	margin-left: 130px;
+		display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	margin-top: 80px;
+	background-color: rgb(187,220,232);
+	border-bottom: 2px solid black;
+}
+#firstRowButton #firstSet{
+	display: flex;
+}
+#firstRowButton button{
+	height: 40px;
+	width: 130px;
+	margin: 0px 5px 0px 5px;
+    border: 1px solid var(--button_border);
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--button_color);
+    color: var(--black_font);
+    transition: 0.4s;
+}
+#firstRowButton button:hover{
+	background-color: var(--button_color_hover);
+    color: var(--white_font);
+    font-weight: 600;
+}
+
+
+
+.task_container{
+	min-height: 150px;
+	height: auto;
+	width: 900px;
+	margin-left: 130px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+/*	border: 2px solid black;*/
+	margin-bottom: 20px;
+/*	position: relative;*/
+	background-color: #edf2f3;
+	border-radius: 5px;
+	color: var(--black_font);
+}
+.task_details{
+/*	border: 2px solid red;	*/
+	min-height: inherit;
+	height: auto;
+	width: 95%;
+/*	background-color: lightblue;*/
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	padding: 2px 10px 2px 10px;
+	margin: 10px 3px 0px 3px;
+	border-radius: 8px;
+}
+.oneBox{
+	display: flex;
+}
+.task_dueTime{
+/*	border-bottom: 2px solid black;*/
+	height: 30px;
+	width: 100px;
+/*	background-color: lightblue;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 5px 10px 5px;
+	color: green;
+}
+.task_dueDate{
+/*	border-bottom: 2px solid black;*/
+	height: 30px;
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 5px 10px 5px;
+	color: green;
+}
+.task_buttons{
+	min-height: inherit;
+	height: auto;
+	width: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0px 3px 0px 3px;
+	border-radius: 8px;
+}
+.task_buttons i{
+	font-size: 20px;	
+	color: var(--icon_color);
+	transition: 0.4s;
+	cursor: pointer;
+}
+.task_buttons i:hover{
+	transform: rotate(-90deg);	
+	color: var(--button_color_hover);
+}
+.task_buttons i:active{
+	font-size: 20px;	
+	transform: scale(200%);
+	color: var(--button_color_hover);
+}
+.task_buttons h2{
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+
+/*edit task styling starts here*/
+.edit_popup{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(44, 157, 183);
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	
+}
+.edit_popup_content{
+	background-color: #B0D4F4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 220px;
+	width: 800px;
+	border-radius: 20px;
+}
+form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+form table{
+	height: 170px;
+	width: 700px;
+}
+input[type="text"]{
+	height: 30px;
+	width: 545px;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+input[type="time"],
+input[type="date"]{
+	height: 30px;
+	width: 150px;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+input[type="submit"],
+input[type="reset"]{
+	height: 35px;
+	width: 140px;
+	border: 1px solid black;
+	outline: none;
+	border-radius: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: var(--pop_up_button);
+	color: white;
+	margin: 0px 5px 0px 5px;
+	transition: 0.4s;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+	background-color: var(--pop_up_button_hover);
+	color: white;
+}
+.edit_popup_content .fa-circle-xmark{
+	position: absolute;
+	top: 202px;
+	left: 1040px;
+	font-size: 28px;
+	cursor: pointer;
+	color: lightcoral;
+	transition: 0.3s;
+}
+.edit_popup_content .fa-circle-xmark:hover{
+	color: red;
+	transform: rotate(360deg);
+}
+.edit_popup_content .fa-circle-xmark:active{
+	font-size: 20px;
+	transform: scale(200%);
+}
+/*edit task styling ends here*/
+
+
+
+
+/*delete task styling starts here*/
+.deleteTask_popup{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(44, 157, 183);
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+}
+.deleteTask_popup_content{
+	background-color: #B0D4F4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 120px;
+	width: 500px;
+	border-radius: 20px;
+}
+#options button{
+	margin-top: 10px;
+	width: 100px;
+	height: 30px;
+	border: 0.5px solid black;
+	border-radius: 5px;
+	outline: none;
+	transition: 0.4s;
+	background-color: var(--pop_up_button);
+	color: white;
+}
+#options button:hover{
+	color: white;
+	background-color: var(--pop_up_button_hover);
+}
+.deleteTask_popup .fa-circle-xmark{
+	position: absolute;
+	top: 252px;
+	left: 890px;
+	font-size: 25px;
+	cursor: pointer;
+	color: lightcoral;
+	transition: 0.3s;
+}
+.deleteTask_popup .fa-circle-xmark:hover{
+	color: red;
+	transform: rotate(360deg);
+}
+.deleteTask_popup .fa-circle-xmark:active{
+	font-size: 20px;
+	transform: scale(200%);
+}
+/*delete task styling ends here*/
+
+
+
+/* task complete button styling starts here*/
+.taskComplete_popup,
+.completeAllTask_popup,
+.deleteAllTask_popup,
+.incompleteTask_popup{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(44, 157, 183);
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	
+}
+.taskComplete_popup_content,
+.completeAllTask_popup_content,
+.deleteAllTask_popup_content,
+.incompleteTask_popup_content{
+	background-color: #B0D4F4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 120px;
+	width: 500px;
+	border-radius: 20px;
+}
+h2{
+	font-size: 18px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+/* task complete button styling ends here*/
+#exit_popup{
+	position: absolute;
+	top: 252px;
+	left: 890px;
+	font-size: 25px;
+	cursor: pointer;
+	color: lightcoral;
+	transition: 0.3s;
+}
+#exit_popup:hover{
+	color: red;
+	transform: rotate(360deg);
+}
+#exit_popup:active{
+	font-size: 20px;
+	transform: scale(200%);
+}
+
+
+
+
+
+
+
+/* completed task page starts here */
+#completed{
+	display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: inherit;
+    min-height: 100vh;
+    background-color: rgb(44, 157, 183, 0.23);
+/*    margin-bottom: 100px;*/
+}
+#completeTaskTestCase{
+		height: 150px;
+}
+.completeTask_container{
+	min-height: 90px;
+	height: auto;
+	width: 900px;
+	margin-left: 130px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+/*	border: 2px solid black;*/
+	margin-bottom: 20px;
+/*	position: relative;*/
+	background-color: #edf2f3;
+	border-radius: 5px;
+}
+.completeTask_details{
+/*	border: 2px solid red;	*/
+	min-height: inherit;
+	height: auto;
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	padding: 2px 10px 2px 10px;
+	margin: 10px 3px 0px 3px;
+	border-radius: 8px;
+}
+.oneBox{
+	display: flex;
+}
+.completeTask_dueTime{
+/*	border-bottom: 2px solid black;*/
+	height: 30px;
+	width: 100px;
+/*	background-color: lightblue;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 5px 10px 5px;
+	color: green;
+}
+
+.completeTask_dueDate{
+/*	border-bottom: 2px solid black;*/
+	height: 30px;
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0px 5px 10px 5px;
+	color: green;
+}
+.completeTask_buttons{
+	min-height: inherit;
+	height: auto;
+	width: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 0px 3px 0px 3px;
+	border-radius: 8px;
+}
+.completeTask_buttons i{
+	font-size: 20px;	
+	color: var(--icon_color);
+	transition: 0.4s;
+	cursor: pointer;
+}
+.completeTask_buttons i:hover{
+	transform: rotate(90deg);
+	color: var(--button_color_hover);	
+}
+.completeTask_buttons i:active{
+	font-size: 20px;	
+	transform: scale(200%);
+	color: var(--button_color_hover);
+}
+.completeTask_buttons h2{
+	font-size: 16px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+.taskRegain_popup{
+	display: none;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(44, 157, 183);
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	
+}
+.taskRegain_popup_content{
+	background-color: #B0D4F4;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 120px;
+	width: 500px;
+	border-radius: 20px;
+}
+
+h2{
+	font-size: 18px;
+	font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.active{
+	height: 40px;
+    width: 180px;
+    border: 1px solid var(--button_border);
+    outline: none;
+    border-radius: 5px;
+    margin: 15px 0px 5px 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--button_color_hover);
+    color: white;
+    transition: 0.4s;
+}
